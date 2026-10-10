@@ -1,0 +1,14 @@
+# Save the selection to Anycap: a URL becomes a link, anything else a note.
+# Talks to the MCP binary inside Anycap.app; no server, no account.
+name: Anycap
+identifier: com.anycap.popclip
+popclip version: 6221
+description: Save the selection or link to Anycap.
+shellScriptRationale: Runs Anycap's bundled MCP helper over local standard input and output to save into its on-device library. PopClip's JavaScript API cannot spawn that helper.
+# The app's own mark, the same one that stands in the menu bar.
+icon: icon.png
+actions:
+  - title: Save to Anycap
+    shell script file: save.sh
+    script interpreter: /bin/zsh
+    after: show-status
